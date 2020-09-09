@@ -9,7 +9,7 @@
     let promiseArray = [];
     for(let i=0; i<1000; i++){
         promiseArray.push(foo());
-        if(promiseArray.length === congestionWindowSize){
+        if(promiseArray.length >= congestionWindowSize){
             console.log(`${promiseArray.length} promises in progress`);
             let congestionTimeoutHandler = setTimeout(()=>{
                 console.log("CONGESTION TIMEOUT");
